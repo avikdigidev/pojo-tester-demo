@@ -1,11 +1,14 @@
 package com.example.demo;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
 public class Pojo {
     private int a;
     private int b;
@@ -15,16 +18,5 @@ public class Pojo {
     // toString
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pojo pojo = (Pojo) o;
-        return a == pojo.a && b == pojo.b && Objects.equals(pojo2, pojo.pojo2);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(a, b, pojo2);
-    }
 }
